@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register | Harsh Shoe Website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .register-container {
+      background: #f8f9fa;
+      max-width: 420px;
+      width: 100%;
+      padding: 40px 35px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(105, 149, 177, 0.25);
+      transition: box-shadow 0.3s ease;
+    }
+    .register-container:hover {
+      box-shadow: 0 12px 32px rgba(105, 149, 177, 0.35);
+    }
+    .register-title {
+      font-weight: 700;
+      font-size: 30px;
+      color: #18181a;
+      margin-bottom: 25px;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    .form-control {
+      border: 1.5px solid #6995B1;
+      border-radius: 5px;
+      padding: 12px 15px;
+      font-size: 16px;
+      margin-bottom: 15px;
+      transition: border-color 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: #4a7b99;
+      box-shadow: none;
+    }
+    .btn-register {
+      background-color: #6995B1;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 0;
+      width: 100%;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-register:hover {
+      background-color: #4a7b99;
+    }
+    .register-footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #8D8D8D;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .register-footer a {
+      color: #6995B1;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    .register-footer a:hover {
+      color: #4a7b99;
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      .register-container {
+        padding: 30px 25px;
+      }
+      .register-title {
+        font-size: 26px;
+      }
+      .btn-register {
+        font-size: 16px;
+        padding: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container" role="main" aria-label="Registration form">
+    <h1 class="register-title">Create Your Account</h1>
+    <form>
+      <input type="text" class="form-control" placeholder="Full Name" required>
+      <input type="email" class="form-control" placeholder="Email Address" required>
+      <input type="password" class="form-control" placeholder="Password" required>
+      <input type="password" class="form-control" placeholder="Confirm Password" required>
+      <button type="submit" class="btn-register" aria-label="Sign Up">Sign Up</button>
+    </form>
+    <div class="register-footer">
+      Already have an account? <a href="login.html">Login here</a>
+    </div>
+  </div>
+</body>
+</html>
