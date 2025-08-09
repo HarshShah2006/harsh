@@ -4,191 +4,525 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Harsh Shoe Website</title>
     <style>
-        .topsidee{
+        .topsidee {
             float: right;
         }
-        a:link{
+        a:link {
             text-decoration: none;
         }
-       
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #6995B1;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        
+        .product-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .collection-item {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .collection-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+        
+        .collection-text button {
+            background: none;
+            border: none;
+            color: white;
+            font-family: Inter sans-serif;
+            font-size: 18px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .topsidee {
+                float: none;
+                display: block;
+                text-align: center;
+                margin-top: 10px;
+            }
+            
+            .contact-info {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            
+            .main-nav {
+                text-align: center;
+            }
+            
+            .main-nav a {
+                display: block;
+                padding: 5px 0;
+            }
+            
+            .product-grid {
+                text-align: center;
+            }
+            .sale-badge{
+                left:80px;
+            }
+            
+            .product-grid .img-thumbnail {
+                margin: 10px auto;
+                float: none;
+                display: block;
+            }
+            
+            .collection-section {
+                position: static !important;
+            }
+            
+            .collection-section img {
+                width: 100% !important;
+                height: auto !important;
+                margin: 10px 0 !important;
+            }
+            
+            .collection-text {
+                position: static !important;
+                text-align: center;
+                margin: 20px 0;
+            }
+            
+            .footer-columns {
+                position: static !important;
+                margin: 20px 0;
+                width: 100% !important;
+            }
+            
+            .benefits {
+                text-align: center;
+                margin: 15px 0;
+            }
+        }
+        
+        /* General improvements */
+        .product-grid .img-thumbnail {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .collection-section {
+            margin-bottom: 30px;
+        }
+        
+        .footer {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+        }
+        
+        .benefits {
+            padding: 20px 0;
+        }
+        
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+            max-height: 500px; /* Added to control carousel height */
+            object-fit: cover; /* Ensures images fill the space properly */
+        }
+        
+        .featured-products {
+            margin: 30px 0;
+        }
+        
+        
+        
+        /* Collection section improvements */
+        .collection-item {
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .collection-text {
+            /* position: absolute;
+            top: 10%;
+            left: 50%; */
+            transform: translate(-30%, -30%);
+            /* text-align: center;
+            width: 100%;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8); */
+        }
+        
+        .collection-text button {
+            background: none;
+            border: none;
+            color: white;
+            font-family: Inter sans-serif;
+            font-size: 18px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+        
+        /* Benefits section improvements */
+        .benefit-item {
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .benefit-item svg {
+            display: block;
+            margin: 0 auto 10px;
+        }
+        
+        .benefit-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body style="background-color: white;">
-    <hr style="background-color: black;">  
-    <div>
-    <p style="font-family: sans-serif;">&emsp;Let's talk <strong>+91 1234567890</strong>
-        <span class="topsidee">    
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
-          </svg>&emsp;
-          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
-          </svg>&emsp;
-          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
-          </svg>&emsp;
-          <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-          </svg>&emsp;
-        </span>
-    </p>
-     </div>
-   <hr><br>
-    <div>
-        <p>
-            Harsh
-            <span class="topsidee">
-                <a href="#">Home</a>&emsp;&emsp;&emsp;&emsp;
-                <a href="#">About Us</a>&emsp;&emsp;&emsp;&emsp;
-                <a href="#">Contact US</a>&emsp;&emsp;&emsp;&emsp;
-                <a href="#">Shop</a>&emsp;&emsp;&emsp;&emsp;
-                <a href="#">Pages</a>&emsp;&emsp;&emsp;&emsp;
-                <a href="#">Blogs</a>&emsp;&emsp;&emsp;&emsp;
-            </span>
-        </p>
-    </div>
-    
-  </div><br><br>
-  <div class="container" style="width: 100%;">
-  
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-  
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" style="width:auto;height: 480px;">
-        <div class="item active">
-          <img src="image1.jpg" alt="Los Angeles" >
+    <div class="container-fluid">
+        <!-- Top Contact Bar -->
+        <div class="row">
+            <div class="col-xs-12">
+                <hr style="background-color: black; margin: 0;">  
+                <div>
+                    <p class="contact-info" style="font-family: sans-serif; padding: 10px 0;">
+                        <span>Let's talk <strong>+91 1234567890</strong></span>
+                        <span class="topsidee">    
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                            </svg>&emsp;
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                            </svg>&emsp;
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                            </svg>&emsp;
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>&emsp;
+                        </span>
+                    </p>
+                </div>
+                <hr>
+            </div>
         </div>
-  
-        <div class="item">
-          <img src="image2.jpg" alt="Chicagoth:">
+        
+        <!-- Main Navigation -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="main-nav">
+                    <p>
+                        <strong style="font-size: 24px;">Harsh</strong>
+                        <span class="topsidee">
+                            <a href="#">Home</a>&emsp;
+                            <a href="#">About Us</a>&emsp;
+                            <a href="#">Contact US</a>&emsp;
+                            <a href="#">Shop</a>&emsp;
+                            <a href="#">Pages</a>&emsp;
+                            <a href="#">Blogs</a>&emsp;
+                        </span>
+                    </p>
+                </div>
+            </div>
         </div>
-      
-        <div class="item">
-          <img src="image3.jpg" alt="New york" >
+        
+        <!-- Carousel -->
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="container" style="width: 100%; padding: 0;">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="max-height: 500px; overflow: hidden;">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img src="image1.jpg" alt="Shoe 1" style="width:100%;">
+                            </div>
+                
+                            <div class="item">
+                                <img src="image2.jpg" alt="Shoe 2" style="width:100%;">
+                            </div>
+                        
+                            <div class="item">
+                                <img src="image3.jpg" alt="Shoe 3" style="width:100%;">
+                            </div>
+                        </div>
+                
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-  
-      <!-- Left and right controls -->
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </div><br><br>
-  <p style="float:right;margin-left:5px;"><strong style=" margin-right: 850px ;font-family: inter sans-serif;font-size: 30px;color: black;padding-left: 35px;">Featured Product</strong>View All Products</p><br><br>
-           <br><br> <nav>
-                <p>
-                    &emsp;&emsp; <img style="float:left;margin-left:50px;" class="img-thumbnail" src="nike1.jfif" alt="">&emsp;&emsp;
-                    <img style="margin-left: 250px;" src="nike2.jfif" class="img-thumbnail" alt="">&emsp;&emsp;
-                    <img style="float:right;margin-right: 50px;" src="nike3.jfif" class="img-thumbnail" alt="">&emsp;&emsp;
-                </p>
-                </nav><br>
-            <nav>
-                <p>
-                    &emsp;&emsp; <img style="float: left;margin-left:50px;" class="img-thumbnail" src="nike4.jfif" alt="">&emsp;&emsp; 
-                    <img style="margin-left:250px"  src="nike5.jfif" class="img-thumbnail" alt="">&emsp;&emsp;
-                    <img  style="float: right;margin-right:50px" src="nike6.jfif" class="img-thumbnail" alt="">&emsp;&emsp;
-                </p>
-            </nav><br><br><br>
-            <div style=" position: relative;">
-              
-              <img style="width: 700px;height: 660px;margin-left: 20px;" src="collectionitem1.jpg" alt=""><span style=" position: absolute;top: 200px; right: 710px;color: #8d8d8d;font-family: Inter sans-serif;font-size: 18px;">Cassual Collection</span><b style=" position: absolute;top: 300px; right: 710px;color: #191919;font-family: Inter sans-serif;font-size: 79px;">Street <br> Wear.</b><button style="width:150px; position: absolute;top: 550px; right: 710px;color: #8d8d8d;font-family: Inter sans-serif;font-size: 18px;">Shop Now</button><svg style="width:50px; position: absolute;top: 558px; right: 710px;color: #8d8d8d;font-family: Inter sans-serif;font-size: 18px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-              </svg>
-                <img  style="width: 610px;height: 320px;float: right;position: absolute;margin-left:15px;" src="collectionitem2.jpg" alt=""><span style=" position: absolute;top: 100px; right: 450px;color: #8d8d8d;font-family: Inter sans-serif;font-size: 18px;">Basic Collection</span><b style=" position: absolute;top: 100px; right: 360px;color: #191919;font-family: Inter sans-serif;font-size: 79px;">Basic <br> Shoes.</b><button style="width:150px; position: absolute;top: 220px; right: 80px;color: #8d8d8d;font-family: Inter sans-serif;font-size: 18px;">Shop Now</button><svg style="width:50px; position: absolute;top: 230px; right: 80px;color: #8d8d8d;font-family: Inter sans-serif;font-size: 18px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                </svg>
-               <img  style="width: 610px;height: 320px;float: right;position: absolute;top: 340px;margin-left:15px;" src="collectionitem3.jpg" alt=""> <span style=" position: absolute;top: 400px; right: 430px;color: #8d8d8d;font-family: Inter sans-serif;font-size: 18px;">Best Seller Shoes</span><b style=" position: absolute;top: 450px; right: 320px;color: #191919;font-family: Inter sans-serif;font-size: 63px;">Imported <br> Shoes.</b><button style="width:150px; position: absolute;top: 580px; right: 50px;color: #8d8d8d;font-family: Inter sans-serif;font-size: 18px;">Shop Now</button><svg style="width:50px; position: absolute;top: 589px; right: 50px;color: #8d8d8d;font-family: Inter sans-serif;font-size: 18px;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-              </svg>
-            </div><br><br>
-            <strong style="font-size: 35px;font-family: inter sans-serif;color: black;margin-left:50px">Fresh Sales</strong><br><br>
-            <nav>
-              <p style="position: relative;">
-                <img style="margin-left:30px" src="fas1.jfif" class="img-thumbnail" alt=""><span style="position: absolute;left: 38px;top: 5px;background-color:#6995B1;color: white;">-10% OFF</span>
-                <img style="margin-left:250px;" src="fas2.jfif" class="img-thumbnail"  alt=""><span style="position: absolute;left: 530px;top: 5px;background-color:#6995B1;color: white;">-10% OFF</span>
-                <img style="margin-left:230px" src="fas3.jfif" class="img-thumbnail"  alt=""><span style="position: absolute;left: 995px;top: 5px;background-color:#6995B1;color: white;">-10% OFF</span>
-              </p>
-            </nav><br>
-            <nav>
-              <p style="position:relative">
-                <img style="margin-left:30px" src="fas4.jfif" class="img-thumbnail"  alt=""><span style="position: absolute;left: 38px;top: 5px;background-color:#6995B1;color: white;">-10% OFF</span>
-                <img style="margin-left:250px;" src="fas5.jfif" class="img-thumbnail"  alt=""><span style="position: absolute;left: 530px;top: 5px;background-color:#6995B1;color: white;">-10% OFF</span>
-                <img style="margin-left:230px" src="fas6.jfif" class="img-thumbnail"  alt=""><span style="position: absolute;left: 995px;top: 5px;background-color:#6995B1;color: white;">-10% OFF</span>
-              </p>
-            </nav><br><hr style="border: 1px solid grey;">
-            <svg style="margin-left:50px;color:#6995b1;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16">
-              <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
-            </svg>&ensp;<strong style="bottom:10px;position: relative;">Free Shipping</strong>&nbsp;<span style="bottom:10px;position:relative;">Over &#8377;2000</span>
-            <svg  style="margin-left:150px;color:#6995b1;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-              <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-            </svg>&ensp;<strong style="bottom: 10px;position:relative;">Money Back</strong><span style="bottom: 10px;position:relative;">&nbsp;Return in 7 Days</span>
-            <svg style="margin-left:90px;color:#6995b1;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-tag" viewBox="0 0 16 16">
-              <path d="M6 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0"/>
-              <path d="M2 1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2a1 1 0 0 1 1-1m0 5.586 7 7L13.586 9l-7-7H2z"/>
-            </svg>&ensp;<strong style="bottom:10px;position: relative;">Buy 2 get 3th</strong>&nbsp;<span style="bottom:10px;position:relative;">at 50% Off</span>
-            <svg style="margin-left:50px;color:#6995b1;" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
-              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-              <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
-            </svg>&ensp;<strong style="bottom:10px;position:relative;">Any Questions?</strong>&nbsp;<span style="bottom:10px;position:relative;">Experts Are Ready</span>
-           <hr style="border:1px solid grey;"><br><br><br><br><br>
-           <nav style="position: relative;">
-           <ul style="list-style-type: none;position:absolute;">
-           <strong><li style="color: #191919;font-size: 18px;">Products</li></strong><br>
-            <li style="font-size: 15px;color: #8D8D8D;">Nike</li><br>
-            <li style="font-size: 15px;color: #8D8D8D;">Adidas</li><br>
-            <li style="font-size: 15px;color: #8D8D8D;">Puma</li><br>
-            <li style="font-size: 15px;color: #8D8D8D;">Bata</li><br>
-            <li style="font-size: 15px;color: #8D8D8D;">Skechers</li><br>
-           </ul>
-           <ul style="list-style-type: none;position: absolute;margin-left:250px;">
-            <strong><li style="color: #191919;font-size: 18px;">Customer Service</li></strong><br>
-             <li style="font-size: 15px;color: #8D8D8D;">FAQ</li><br>
-             <li style="font-size: 15px;color: #8D8D8D;">Contact</li><br>
-             <li style="font-size: 15px;color: #8D8D8D;">Privacy Policy</li><br>
-             <li style="font-size: 15px;color: #8D8D8D;">Return & refunds</li><br>
-             <li style="font-size: 15px;color: #8D8D8D;">Delievery Information</li><br>
-            </ul>
-            <ul style="list-style-type: none;position: absolute;margin-left:550px;">
-              <strong><li style="color: #191919;font-size: 18px;">Contact Us</li></strong><br>
-              <li style="font-size: 15px;color:#8D8D8D;">Do you have any questions <br> or suggestions?</li><strong style="font-size: 15px;color: #8D8D8D;"> harsh@gmail.com</strong><br><br>
-              <li style="font-size: 15px;color: #8D8D8D;">For any doubts Give Us a Call on</li><strong style="font-size: 15px;color: #8D8D8D;">+91 1234567890</strong><br><br>
-              <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
-              </svg>&emsp;<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
-              </svg>&emsp;<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-              </svg>&emsp;<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
-              </svg></li>
-              </ul>
-              <ul style="list-style-type: none;position: absolute;margin-left:880px;">
-                <strong><li style="color: #191919;font-size: 18px;">Customer Service</li></strong><br>
-                 <li style="font-size: 15px;color: #8D8D8D;">FAQ</li><br>
-                 <li style="font-size: 15px;color: #8D8D8D;">Contact</li><br>
-                 <li style="font-size: 15px;color: #8D8D8D;">Privacy Policy</li><br>
-                 <li style="font-size: 15px;color: #8D8D8D;">Return & refunds</li><br>
-                 <li style="font-size: 15px;color: #8D8D8D;">Delievery Information</li><br>
+        
+        <!-- Featured Products -->
+        <div class="row featured-products">
+            <div class="col-xs-12">
+                <div style="padding: 0 15px;">
+                    <p>
+                        <strong style="font-family: inter sans-serif; font-size: 30px; color: black;">Featured Product</strong>
+                        <span style="float: right;">View All Products</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row product-grid">
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="nike1.jfif" class="img-thumbnail" alt="Nike 1">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="nike2.jfif" class="img-thumbnail" alt="Nike 2">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="nike3.jfif" class="img-thumbnail" alt="Nike 3">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="nike4.jfif" class="img-thumbnail" alt="Nike 4">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="nike5.jfif" class="img-thumbnail" alt="Nike 5">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="nike6.jfif" class="img-thumbnail" alt="Nike 6">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Collection Section -->
+        <div class="row collection-section">
+            <div class="col-md-7">
+                <div class="collection-item">
+                    <img src="collectionitem1.jpg" alt="Street Wear" style="width: 100%; height: auto;">
+                    <div class="collection-text">
+                        <span style="color: white; font-family: Inter sans-serif; font-size: 18px;">Cassual Collection</span>
+                        <b style="color: white; font-family: Inter sans-serif; font-size: 3vw; display: block;">Street Wear.</b>
+                        <button>
+                            Shop Now
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="collection-item" style="margin-bottom: 20px;">
+                    <img src="collectionitem2.jpg" alt="Basic Shoes" style="width: 100%; height: auto;">
+                    <div class="collection-text">
+                        <span style="color: white; font-family: Inter sans-serif; font-size: 18px;">Basic Collection</span>
+                        <b style="color: white; font-family: Inter sans-serif; font-size: 2.5vw; display: block;">Basic Shoes.</b>
+                        <button>
+                            Shop Now
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="collection-item">
+                    <img src="collectionitem3.jpg" alt="Imported Shoes" style="width: 100%; height: auto;">
+                    <div class="collection-text">
+                        <span style="color: white; font-family: Inter sans-serif; font-size: 18px;">Best Seller Shoes</span>
+                        <b style="color: white; font-family: Inter sans-serif; font-size: 2.5vw; display: block;">Imported Shoes.</b>
+                        <button>
+                            Shop Now
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Fresh Sales -->
+        <div class="row">
+            <div class="col-xs-12">
+                <strong style="font-size: 35px; font-family: inter sans-serif; color: black; padding: 0 15px;">Fresh Sales</strong>
+            </div>
+        </div>
+        
+        <div class="row product-grid">
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="fas1.jfif" class="img-thumbnail" alt="Sale 1">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="fas2.jfif" class="img-thumbnail" alt="Sale 2">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="fas3.jfif" class="img-thumbnail" alt="Sale 3">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="fas4.jfif" class="img-thumbnail" alt="Sale 4">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="fas5.jfif" class="img-thumbnail" alt="Sale 5">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="product-container">
+                    <img src="fas6.jfif" class="img-thumbnail" alt="Sale 6">
+                    <span class="sale-badge">-10% OFF</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Benefits Section -->
+        <div class="row benefits">
+            <div class="col-xs-12">
+                <hr style="border: 1px solid grey;">
+                <div class="col-sm-6 col-md-3 benefit-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#6995b1" class="bi bi-truck" viewBox="0 0 16 16">
+                        <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+                    </svg>
+                    <strong>Free Shipping</strong>
+                    <span>Over ₹2000</span>
+                </div>
+                <div class="col-sm-6 col-md-3 benefit-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#6995b1" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                    </svg>
+                    <strong>Money Back</strong>
+                    <span>Return in 7 Days</span>
+                </div>
+                <div class="col-sm-6 col-md-3 benefit-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#6995b1" class="bi bi-tag" viewBox="0 0 16 16">
+                        <path d="M6 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0"/>
+                        <path d="M2 1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2a1 1 0 0 1 1-1m0 5.586 7 7L13.586 9l-7-7H2z"/>
+                    </svg>
+                    <strong>Buy 2 get 3th</strong>
+                    <span>at 50% Off</span>
+                </div>
+                <div class="col-sm-6 col-md-3 benefit-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#6995b1" class="bi bi-question-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
+                    </svg>
+                    <strong>Any Questions?</strong>
+                    <span>Experts Are Ready</span>
+                </div>
+                <hr style="border:1px solid grey;">
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="row footer">
+            <div class="col-sm-6 col-md-3 footer-columns">
+                <ul style="list-style-type: none;">
+                    <strong><li style="color: #191919;font-size: 18px;">Products</li></strong><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Nike</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Adidas</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Puma</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Bata</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Skechers</li><br>
                 </ul>
-          </nav>
+            </div>
+            <div class="col-sm-6 col-md-3 footer-columns">
+                <ul style="list-style-type: none;">
+                    <strong><li style="color: #191919;font-size: 18px;">Customer Service</li></strong><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">FAQ</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Contact</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Privacy Policy</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Return & refunds</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Delievery Information</li><br>
+                </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 footer-columns">
+                <ul style="list-style-type: none;">
+                    <strong><li style="color: #191919;font-size: 18px;">Contact Us</li></strong><br>
+                    <li style="font-size: 15px;color:#8D8D8D;">Do you have any questions or suggestions?</li>
+                    <strong style="font-size: 15px;color: #8D8D8D;"> harsh@gmail.com</strong><br><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">For any doubts Give Us a Call on</li>
+                    <strong style="font-size: 15px;color: #8D8D8D;">+91 1234567890</strong><br><br>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6995b1" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                        </svg>&emsp;
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6995b1" class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+                        </svg>&emsp;
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6995b1" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg>&emsp;
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#6995b1" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-6 col-md-3 footer-columns">
+                <ul style="list-style-type: none;">
+                    <strong><li style="color: #191919;font-size: 18px;">Customer Service</li></strong><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">FAQ</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Contact</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Privacy Policy</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Return & refunds</li><br>
+                    <li style="font-size: 15px;color: #8D8D8D;">Delievery Information</li><br>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
