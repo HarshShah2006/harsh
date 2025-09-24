@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Cart | Harsh Shoe Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f8f9fa;
+    margin: 0;
+  }
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  h1 {
+    color: #6995B1;
+    margin: 0;
+  }
+  .home-btn {
+    background: #6995B1;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .home-btn:hover {
+    background: #4a7b99;
+  }
+  .cart-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .cart-item {
+    background: white;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+  }
+  .cart-item:hover {
+    transform: translateY(-2px);
+  }
+  .cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .item-info {
+    flex: 1;
+  }
+  .item-name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .item-price {
+    color: green;
+    font-size: 16px;
+  }
+  .remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #dc3545;
+    font-size: 22px;
+    padding: 6px;
+    border-radius: 5px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .remove-btn:hover {
+    background: rgba(220,53,69,0.1);
+    transform: scale(1.1);
+  }
+  .cart-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .clear-cart-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .clear-cart-btn:hover {
+    background: #b02a37;
+  }
+  .buy-now-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .buy-now-btn:hover {
+    background: #218838;
+  }
+  .total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+    header {
+  background: #6995B1;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: #ffe082;
+}
+
+  @media (max-width: 600px) {
+    .cart-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .cart-item img {
+      width: 100%;
+      height: auto;
+    }
+    .item-name {
+      font-size: 16px;
+    }
+    .cart-footer {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .total {
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+
+
+  <!-- Header Bar -->
+ <header>
+    <div class="logo">EliteWalkers</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+<br><br>
+<div class="cart-container">
+  <div id="cartItems"></div>
+
+  <div class="cart-footer">
+    <button class="clear-cart-btn" id="clearCartBtn">Clear Cart</button>
+    <div class="total" id="totalAmount">Total: ₹0</div>
+    <button class="buy-now-btn" id="buyNowBtn">Buy Now</button>
+  </div>
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+const cartItemsDiv = document.getElementById('cartItems');
+const totalAmountEl = document.getElementById('totalAmount');
+const buyNowBtn = document.getElementById('buyNowBtn');
+
+function renderCart() {
+  cartItemsDiv.innerHTML = '';
+  let total = 0;
+
+  if (cart.length === 0) {
+    cartItemsDiv.innerHTML = "<p style='text-align:center;'>Your cart is empty.</p>";
+    totalAmountEl.textContent = "Total: ₹0";
+    return;
+  }
+
+  cart.forEach((item, index) => {
+    total += Number(item.price);
+    const itemDiv = document.createElement('div');
+    itemDiv.className = 'cart-item';
+    itemDiv.innerHTML = `
+      <img src="${item.img}" alt="${item.name}">
+      <div class="item-info">
+        <div class="item-name">${item.name}</div>
+        <div class="item-price">₹${item.price}</div>
+      </div>
+      <button class="remove-btn" title="Remove Item" onclick="removeItem(${index})">✖</button>
+    `;
+    cartItemsDiv.appendChild(itemDiv);
+  });
+
+  totalAmountEl.textContent = "Total: ₹" + total;
+}
+
+function clearCart() {
+  cart = [];
+  localStorage.removeItem('cart');
+  renderCart();
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  localStorage.setItem('cart', JSON.stringify(cart));
+  renderCart();
+}
+
+// Example Buy Now click
+buyNowBtn.addEventListener('click', () => {
+  if(cart.length === 0){
+    alert("Your cart is empty!");
+    return;
+  }
+  // Open your payment gateway page (replace URL with real gateway)
+  window.location.href = "https://www.example.com/payment";
+});
+
+document.getElementById('clearCartBtn').addEventListener('click', clearCart);
+
+renderCart();
+</script>
+
+</body>
+</html>

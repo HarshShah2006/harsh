@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forgot Password | Harsh Shoe Website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .forgot-container {
+      background: #f8f9fa;
+      max-width: 400px;
+      width: 100%;
+      padding: 40px 35px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(105, 149, 177, 0.25);
+      transition: box-shadow 0.3s ease;
+    }
+    .forgot-container:hover {
+      box-shadow: 0 12px 32px rgba(105, 149, 177, 0.35);
+    }
+    .forgot-title {
+      font-weight: 700;
+      font-size: 28px;
+      color: #18181a;
+      margin-bottom: 22px;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    .forgot-desc {
+      color: #484848;
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 22px;
+    }
+    .form-control {
+      border: 1.5px solid #6995B1;
+      border-radius: 5px;
+      padding: 12px 15px;
+      font-size: 16px;
+      margin-bottom: 18px;
+      transition: border-color 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: #4a7b99;
+      box-shadow: none;
+    }
+    .btn-reset {
+      background-color: #6995B1;
+      color: white;
+      font-size: 17px;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 0;
+      width: 100%;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-reset:hover {
+      background-color: #4a7b99;
+    }
+    .forgot-footer {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #8D8D8D;
+      text-align: center;
+    }
+    .forgot-footer a {
+      color: #6995B1;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    .forgot-footer a:hover {
+      color: #4a7b99;
+      text-decoration: underline;
+    }
+    @media (max-width: 480px) {
+      .forgot-container {
+        padding: 30px 20px;
+      }
+      .forgot-title {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="forgot-container" role="main" aria-label="Forgot password form">
+    <h2 class="forgot-title">Forgot Password?</h2>
+    <p class="forgot-desc">Enter your email address and we'll send you instructions to reset your password.</p>
+    <form>
+      <input type="email" class="form-control" placeholder="Email Address" required aria-label="Email" />
+      <button type="submit" class="btn-reset" aria-label="Reset Password">Reset Password</button>
+    </form>
+    <div class="forgot-footer">
+      <a href="login.html">Back to Login</a>
+    </div>
+  </div>
+</body>
+</html>

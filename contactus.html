@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Harsh Shoes</title>
+  <style>
+    /* Reset & Global */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* Navbar */
+header {
+  background: #6995B1;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: #ffe082;
+}
+
+/* Contact Section */
+.contact {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact .container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.contact h1 {
+  color: #6995B1;
+  margin-bottom: 15px;
+}
+
+.contact p {
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* Form */
+.contact-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #6995B1;
+  box-shadow: 0 0 5px rgba(105,149,177,0.4);
+}
+
+.btn {
+  background: #6995B1;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #4a7b99;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="logo">EliteWalkers</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We’d love to hear from you! Fill out the form below and we’ll get in touch soon.</p>
+      <form class="contact-form" action="contactus.php" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" name="name" id="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" name="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea name="message" id="message" rows="5" placeholder="Write your message..." required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EliteWalkers. All Rights Reserved.Developed By Harsh Shah.</p>
+  </footer>
+</body>
+</html>

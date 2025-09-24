@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Harsh Shoe Website</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #6995B1;
+    color: white;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .header-bar h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  .home-btn {
+    background: white;
+    color: #6995B1;
+    border: none;
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .home-btn:hover {
+    background-color: #e0e0e0;
+  }
+  .about-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .about-container h2 {
+    color: #6995B1;
+    margin-bottom: 15px;
+    font-size: 28px;
+    text-align: center;
+  }
+  .about-container p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+  .team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .team-member {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  .team-member:hover {
+    transform: translateY(-5px);
+  }
+  .team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  .team-member h3 {
+    margin: 10px 0 5px 0;
+    color: #6995B1;
+    font-size: 18px;
+  }
+  .team-member p {
+    font-size: 14px;
+    color: #555;
+  }
+  header {
+  background: #6995B1;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+  color: #ffe082;
+}
+
+  @media(max-width:600px){
+    .team-member {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header Bar -->
+ <header>
+    <div class="logo">EliteWalkers</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+<br><br>
+
+<div class="about-container">
+  <h2>Who We Are</h2>
+  <p>Harsh Shoe Website is committed to bringing you the best quality footwear from top brands like Nike, Adidas, Puma, Bata, and Skechers. We believe in providing a seamless online shopping experience with fast delivery, secure payments, and excellent customer service.</p>
+  
+  <p>Our mission is to help you find your perfect pair of shoes for any occasion—be it sports, casual outings, or professional events. We curate only the best products and ensure you get the best deals directly at your doorstep.</p>
+  
+  <h2>Our Team</h2>
+  <div class="team">
+    <div class="team-member">
+      <img src="team1.jpg" alt="Team Member 1">
+      <h3>Harsh Shah</h3>
+      <p>Founder & CEO</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
