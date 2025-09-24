@@ -98,11 +98,11 @@
 <body>
   <div class="register-container" role="main" aria-label="Registration form">
     <h1 class="register-title">Create Your Account</h1>
-    <form>
-      <input type="text" class="form-control" placeholder="Full Name" required>
-      <input type="email" class="form-control" placeholder="Email Address" required>
-      <input type="password" class="form-control" placeholder="Password" required>
-      <input type="password" class="form-control" placeholder="Confirm Password" required>
+    <form action="register.php" method="POST">
+      <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+      <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+      <input type="password" class="form-control" name="password" placeholder="Password" required>
+      <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required>
       <button type="submit" class="btn-register" aria-label="Sign Up">Sign Up</button>
     </form>
     <div class="register-footer">
